@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper in preferred-citation."
+type: software
+title: "esann2027-natVSinterp: code for Native versus interpolated training data under conformal calibration"
+authors:
+  - family-names: Tzagkarakis
+    given-names: Christos
+    affiliation: "Institute of Computer Science, FORTH"
+license: MIT
+repository-code: "https://github.com/ctzag/esann2027-natVSinterp"
+version: "1.0.0"
+keywords:
+  - conformal prediction
+  - distribution shift
+  - probabilistic forecasting
+  - calibration
+  - temporal resolution
+  - time series
+  - electricity prices
+preferred-citation:
+  type: conference-paper
+  title: "Native versus interpolated training data under conformal calibration: Probabilistic time series forecasting after a change in temporal resolution"
+  authors:
+    - family-names: Tzagkarakis
+      given-names: Christos
+      affiliation: "Institute of Computer Science, FORTH"
+    - family-names: van Est
+      given-names: Stan
+      affiliation: "Erasmus School of Economics, Erasmus University Rotterdam"
+    - family-names: Dekker
+      given-names: Rommert
+      affiliation: "Erasmus School of Economics, Erasmus University Rotterdam"
+  collection-title: "ESANN 2027, European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning"
+  conference:
+    name: "ESANN 2027"
+    city: Bruges
+    country: BE
+    date-start: 2027-04-21
+    date-end: 2027-04-23
+  year: 2027
+  status: submitted

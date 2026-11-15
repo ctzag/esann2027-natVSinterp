@@ -1,0 +1,4 @@
+# Download scripts only (scripts/00_smoke_test.py, scripts/01_download_raw.py).
+# Versions used for the downloads of the paper (12 Oct 2026).
+entsoe-py==0.8.1
+yfinance==1.7.0

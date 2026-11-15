@@ -1,0 +1,340 @@
+{
+ "structure": "15min",
+ "tuned_on": "thesis_features_15min_mp_full.csv",
+ "first_window": [
+  "2024-10-02",
+  "2025-09-30"
+ ],
+ "train_days": [
+  "2024-10-02",
+  "2025-08-05"
+ ],
+ "val_days": [
+  "2025-08-06",
+  "2025-09-30"
+ ],
+ "hours": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23
+ ],
+ "window_sha256": "c2c2f7257590fecb9702f787a0682ff3c7167f6f15d4b978f0202faa622dd5b1",
+ "features": [
+  "price_lag_d1",
+  "price_lag_d7",
+  "Ymax_d1",
+  "Ymin_d1",
+  "Peod_d1",
+  "residual_load_mw",
+  "solar_mw",
+  "wind_onshore_mw",
+  "wind_offshore_mw",
+  "srmc_ccgt",
+  "srmc_coal",
+  "dow_tue",
+  "dow_wed",
+  "dow_thu",
+  "dow_fri",
+  "dow_sat",
+  "dow_sun",
+  "q15",
+  "q30",
+  "q45"
+ ],
+ "fixed": {
+  "tree_method": "hist",
+  "nthread": 1,
+  "seed": 2027,
+  "subsample": 0.8,
+  "colsample_bytree": 0.8,
+  "min_child_weight": 5,
+  "gamma": 0.0,
+  "lambda": 1.0
+ },
+ "point_objective": "reg:squarederror",
+ "max_rounds": 1000,
+ "patience": 50,
+ "score": "sum over the hour-fits of the mean validation loss per round (point: MAE, quantiles: pinball), early stopping on the summed curve",
+ "point": {
+  "max_depth": 3,
+  "eta": 0.05,
+  "rounds": 86,
+  "score_mae_sum": 352.84072950686993
+ },
+ "quantiles": {
+  "q10": {
+   "tau": 0.1,
+   "eta": 0.05,
+   "rounds": 228,
+   "score_pinball_sum": 74.46283649856126
+  },
+  "q20": {
+   "tau": 0.2,
+   "eta": 0.05,
+   "rounds": 283,
+   "score_pinball_sum": 118.08886819586024
+  },
+  "q30": {
+   "tau": 0.3,
+   "eta": 0.05,
+   "rounds": 418,
+   "score_pinball_sum": 146.83757239639294
+  },
+  "q40": {
+   "tau": 0.4,
+   "eta": 0.1,
+   "rounds": 362,
+   "score_pinball_sum": 163.2340955302578
+  },
+  "q50": {
+   "tau": 0.5,
+   "eta": 0.05,
+   "rounds": 426,
+   "score_pinball_sum": 173.46524118119427
+  },
+  "q60": {
+   "tau": 0.6,
+   "eta": 0.05,
+   "rounds": 391,
+   "score_pinball_sum": 173.51692417664682
+  },
+  "q70": {
+   "tau": 0.7,
+   "eta": 0.1,
+   "rounds": 106,
+   "score_pinball_sum": 165.37123096813585
+  },
+  "q80": {
+   "tau": 0.8,
+   "eta": 0.05,
+   "rounds": 232,
+   "score_pinball_sum": 145.19175268876768
+  },
+  "q90": {
+   "tau": 0.9,
+   "eta": 0.05,
+   "rounds": 229,
+   "score_pinball_sum": 101.80718858055769
+  }
+ },
+ "grid": {
+  "point": [
+   {
+    "max_depth": 3,
+    "eta": 0.05,
+    "rounds": 86,
+    "stopped_at": 136,
+    "score_mae_sum": 352.84072950686993
+   },
+   {
+    "max_depth": 3,
+    "eta": 0.1,
+    "rounds": 49,
+    "stopped_at": 99,
+    "score_mae_sum": 357.4028313729726
+   },
+   {
+    "max_depth": 5,
+    "eta": 0.05,
+    "rounds": 87,
+    "stopped_at": 137,
+    "score_mae_sum": 356.33884631331847
+   },
+   {
+    "max_depth": 5,
+    "eta": 0.1,
+    "rounds": 42,
+    "stopped_at": 92,
+    "score_mae_sum": 359.72695710169495
+   },
+   {
+    "max_depth": 7,
+    "eta": 0.05,
+    "rounds": 89,
+    "stopped_at": 139,
+    "score_mae_sum": 362.17259252332155
+   },
+   {
+    "max_depth": 7,
+    "eta": 0.1,
+    "rounds": 38,
+    "stopped_at": 88,
+    "score_mae_sum": 363.8823170611954
+   }
+  ],
+  "quantiles": [
+   {
+    "level": "q10",
+    "tau": 0.1,
+    "eta": 0.05,
+    "rounds": 228,
+    "stopped_at": 278,
+    "score_pinball_sum": 74.46283649856126
+   },
+   {
+    "level": "q10",
+    "tau": 0.1,
+    "eta": 0.1,
+    "rounds": 130,
+    "stopped_at": 180,
+    "score_pinball_sum": 74.65010917437198
+   },
+   {
+    "level": "q20",
+    "tau": 0.2,
+    "eta": 0.05,
+    "rounds": 283,
+    "stopped_at": 333,
+    "score_pinball_sum": 118.08886819586024
+   },
+   {
+    "level": "q20",
+    "tau": 0.2,
+    "eta": 0.1,
+    "rounds": 133,
+    "stopped_at": 183,
+    "score_pinball_sum": 119.37097390619907
+   },
+   {
+    "level": "q30",
+    "tau": 0.3,
+    "eta": 0.05,
+    "rounds": 418,
+    "stopped_at": 468,
+    "score_pinball_sum": 146.83757239639294
+   },
+   {
+    "level": "q30",
+    "tau": 0.3,
+    "eta": 0.1,
+    "rounds": 206,
+    "stopped_at": 256,
+    "score_pinball_sum": 147.10583157337706
+   },
+   {
+    "level": "q40",
+    "tau": 0.4,
+    "eta": 0.05,
+    "rounds": 369,
+    "stopped_at": 419,
+    "score_pinball_sum": 163.93512858613158
+   },
+   {
+    "level": "q40",
+    "tau": 0.4,
+    "eta": 0.1,
+    "rounds": 362,
+    "stopped_at": 412,
+    "score_pinball_sum": 163.2340955302578
+   },
+   {
+    "level": "q50",
+    "tau": 0.5,
+    "eta": 0.05,
+    "rounds": 426,
+    "stopped_at": 476,
+    "score_pinball_sum": 173.46524118119427
+   },
+   {
+    "level": "q50",
+    "tau": 0.5,
+    "eta": 0.1,
+    "rounds": 152,
+    "stopped_at": 202,
+    "score_pinball_sum": 177.19277488315163
+   },
+   {
+    "level": "q60",
+    "tau": 0.6,
+    "eta": 0.05,
+    "rounds": 391,
+    "stopped_at": 441,
+    "score_pinball_sum": 173.51692417664682
+   },
+   {
+    "level": "q60",
+    "tau": 0.6,
+    "eta": 0.1,
+    "rounds": 218,
+    "stopped_at": 268,
+    "score_pinball_sum": 175.47856160646373
+   },
+   {
+    "level": "q70",
+    "tau": 0.7,
+    "eta": 0.05,
+    "rounds": 236,
+    "stopped_at": 286,
+    "score_pinball_sum": 165.53774120469413
+   },
+   {
+    "level": "q70",
+    "tau": 0.7,
+    "eta": 0.1,
+    "rounds": 106,
+    "stopped_at": 156,
+    "score_pinball_sum": 165.37123096813585
+   },
+   {
+    "level": "q80",
+    "tau": 0.8,
+    "eta": 0.05,
+    "rounds": 232,
+    "stopped_at": 282,
+    "score_pinball_sum": 145.19175268876768
+   },
+   {
+    "level": "q80",
+    "tau": 0.8,
+    "eta": 0.1,
+    "rounds": 85,
+    "stopped_at": 135,
+    "score_pinball_sum": 145.24562412844705
+   },
+   {
+    "level": "q90",
+    "tau": 0.9,
+    "eta": 0.05,
+    "rounds": 229,
+    "stopped_at": 279,
+    "score_pinball_sum": 101.80718858055769
+   },
+   {
+    "level": "q90",
+    "tau": 0.9,
+    "eta": 0.1,
+    "rounds": 104,
+    "stopped_at": 154,
+    "score_pinball_sum": 102.66175436114627
+   }
+  ]
+ },
+ "xgboost_version": "3.4.1",
+ "tuning_wall_s": 18.369000250007957,
+ "shared_by": [
+  "native",
+  "interp"
+ ],
+ "window_sha256_interp": "c2c2f7257590fecb9702f787a0682ff3c7167f6f15d4b978f0202faa622dd5b1"
+}

@@ -1,0 +1,332 @@
+{
+ "structure": "hourly",
+ "tuned_on": "thesis_features_1hour_full.csv",
+ "first_window": [
+  "2024-10-02",
+  "2025-09-30"
+ ],
+ "train_days": [
+  "2024-10-02",
+  "2025-08-05"
+ ],
+ "val_days": [
+  "2025-08-06",
+  "2025-09-30"
+ ],
+ "hours": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23
+ ],
+ "window_sha256": "4723b133c548e0f2b0150e55cb5ea114856dfa973c4eda8161b481968b76f525",
+ "features": [
+  "price_lag_d1",
+  "price_lag_d7",
+  "Ymax_d1",
+  "Ymin_d1",
+  "Peod_d1",
+  "residual_load_mw",
+  "solar_mw",
+  "wind_onshore_mw",
+  "wind_offshore_mw",
+  "srmc_ccgt",
+  "srmc_coal",
+  "dow_tue",
+  "dow_wed",
+  "dow_thu",
+  "dow_fri",
+  "dow_sat",
+  "dow_sun"
+ ],
+ "fixed": {
+  "tree_method": "hist",
+  "nthread": 1,
+  "seed": 2027,
+  "subsample": 0.8,
+  "colsample_bytree": 0.8,
+  "min_child_weight": 5,
+  "gamma": 0.0,
+  "lambda": 1.0
+ },
+ "point_objective": "reg:squarederror",
+ "max_rounds": 1000,
+ "patience": 50,
+ "score": "sum over the hour-fits of the mean validation loss per round (point: MAE, quantiles: pinball), early stopping on the summed curve",
+ "point": {
+  "max_depth": 5,
+  "eta": 0.05,
+  "rounds": 83,
+  "score_mae_sum": 354.6102198755316
+ },
+ "quantiles": {
+  "q10": {
+   "tau": 0.1,
+   "eta": 0.1,
+   "rounds": 82,
+   "score_pinball_sum": 77.8896314138214
+  },
+  "q20": {
+   "tau": 0.2,
+   "eta": 0.05,
+   "rounds": 159,
+   "score_pinball_sum": 120.03347861544364
+  },
+  "q30": {
+   "tau": 0.3,
+   "eta": 0.05,
+   "rounds": 258,
+   "score_pinball_sum": 148.06891214602695
+  },
+  "q40": {
+   "tau": 0.4,
+   "eta": 0.05,
+   "rounds": 962,
+   "score_pinball_sum": 166.36409924566746
+  },
+  "q50": {
+   "tau": 0.5,
+   "eta": 0.05,
+   "rounds": 717,
+   "score_pinball_sum": 173.89416973724562
+  },
+  "q60": {
+   "tau": 0.6,
+   "eta": 0.05,
+   "rounds": 974,
+   "score_pinball_sum": 174.4966785844309
+  },
+  "q70": {
+   "tau": 0.7,
+   "eta": 0.05,
+   "rounds": 483,
+   "score_pinball_sum": 171.6827027568381
+  },
+  "q80": {
+   "tau": 0.8,
+   "eta": 0.1,
+   "rounds": 96,
+   "score_pinball_sum": 151.06114574464306
+  },
+  "q90": {
+   "tau": 0.9,
+   "eta": 0.05,
+   "rounds": 154,
+   "score_pinball_sum": 108.87408461366378
+  }
+ },
+ "grid": {
+  "point": [
+   {
+    "max_depth": 3,
+    "eta": 0.05,
+    "rounds": 102,
+    "stopped_at": 152,
+    "score_mae_sum": 355.9749415442242
+   },
+   {
+    "max_depth": 3,
+    "eta": 0.1,
+    "rounds": 50,
+    "stopped_at": 100,
+    "score_mae_sum": 356.79843771768464
+   },
+   {
+    "max_depth": 5,
+    "eta": 0.05,
+    "rounds": 83,
+    "stopped_at": 133,
+    "score_mae_sum": 354.6102198755316
+   },
+   {
+    "max_depth": 5,
+    "eta": 0.1,
+    "rounds": 40,
+    "stopped_at": 90,
+    "score_mae_sum": 357.60375529666027
+   },
+   {
+    "max_depth": 7,
+    "eta": 0.05,
+    "rounds": 84,
+    "stopped_at": 134,
+    "score_mae_sum": 357.6852569639469
+   },
+   {
+    "max_depth": 7,
+    "eta": 0.1,
+    "rounds": 38,
+    "stopped_at": 88,
+    "score_mae_sum": 360.57997821886624
+   }
+  ],
+  "quantiles": [
+   {
+    "level": "q10",
+    "tau": 0.1,
+    "eta": 0.05,
+    "rounds": 182,
+    "stopped_at": 232,
+    "score_pinball_sum": 78.60287054767733
+   },
+   {
+    "level": "q10",
+    "tau": 0.1,
+    "eta": 0.1,
+    "rounds": 82,
+    "stopped_at": 132,
+    "score_pinball_sum": 77.8896314138214
+   },
+   {
+    "level": "q20",
+    "tau": 0.2,
+    "eta": 0.05,
+    "rounds": 159,
+    "stopped_at": 209,
+    "score_pinball_sum": 120.03347861544364
+   },
+   {
+    "level": "q20",
+    "tau": 0.2,
+    "eta": 0.1,
+    "rounds": 76,
+    "stopped_at": 126,
+    "score_pinball_sum": 120.65000244268882
+   },
+   {
+    "level": "q30",
+    "tau": 0.3,
+    "eta": 0.05,
+    "rounds": 258,
+    "stopped_at": 308,
+    "score_pinball_sum": 148.06891214602695
+   },
+   {
+    "level": "q30",
+    "tau": 0.3,
+    "eta": 0.1,
+    "rounds": 256,
+    "stopped_at": 306,
+    "score_pinball_sum": 148.3440932187132
+   },
+   {
+    "level": "q40",
+    "tau": 0.4,
+    "eta": 0.05,
+    "rounds": 962,
+    "stopped_at": 1000,
+    "score_pinball_sum": 166.36409924566746
+   },
+   {
+    "level": "q40",
+    "tau": 0.4,
+    "eta": 0.1,
+    "rounds": 248,
+    "stopped_at": 298,
+    "score_pinball_sum": 166.9662557709909
+   },
+   {
+    "level": "q50",
+    "tau": 0.5,
+    "eta": 0.05,
+    "rounds": 717,
+    "stopped_at": 767,
+    "score_pinball_sum": 173.89416973724562
+   },
+   {
+    "level": "q50",
+    "tau": 0.5,
+    "eta": 0.1,
+    "rounds": 466,
+    "stopped_at": 516,
+    "score_pinball_sum": 174.87301940593335
+   },
+   {
+    "level": "q60",
+    "tau": 0.6,
+    "eta": 0.05,
+    "rounds": 974,
+    "stopped_at": 1000,
+    "score_pinball_sum": 174.4966785844309
+   },
+   {
+    "level": "q60",
+    "tau": 0.6,
+    "eta": 0.1,
+    "rounds": 535,
+    "stopped_at": 585,
+    "score_pinball_sum": 176.76829816361627
+   },
+   {
+    "level": "q70",
+    "tau": 0.7,
+    "eta": 0.05,
+    "rounds": 483,
+    "stopped_at": 533,
+    "score_pinball_sum": 171.6827027568381
+   },
+   {
+    "level": "q70",
+    "tau": 0.7,
+    "eta": 0.1,
+    "rounds": 252,
+    "stopped_at": 302,
+    "score_pinball_sum": 172.41403752851704
+   },
+   {
+    "level": "q80",
+    "tau": 0.8,
+    "eta": 0.05,
+    "rounds": 154,
+    "stopped_at": 204,
+    "score_pinball_sum": 151.7664993784789
+   },
+   {
+    "level": "q80",
+    "tau": 0.8,
+    "eta": 0.1,
+    "rounds": 96,
+    "stopped_at": 146,
+    "score_pinball_sum": 151.06114574464306
+   },
+   {
+    "level": "q90",
+    "tau": 0.9,
+    "eta": 0.05,
+    "rounds": 154,
+    "stopped_at": 204,
+    "score_pinball_sum": 108.87408461366378
+   },
+   {
+    "level": "q90",
+    "tau": 0.9,
+    "eta": 0.1,
+    "rounds": 72,
+    "stopped_at": 122,
+    "score_pinball_sum": 108.91472971575601
+   }
+  ]
+ },
+ "xgboost_version": "3.4.1",
+ "tuning_wall_s": 18.279756249976344
+}

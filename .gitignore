@@ -1,0 +1,15 @@
+raw/
+out_plan*/
+_macbuild/
+forecasts/
+forecasts_retune/
+conformal/
+_scratch/
+*.zip
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+logs/
+results/summary.md
+results/fig2_lear.pdf

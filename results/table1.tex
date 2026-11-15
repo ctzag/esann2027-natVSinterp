@@ -1,0 +1,21 @@
+\begin{tabular}{|l|l|c|c|c|c|c|c|c|}
+\hline
+Setting & Model & MAE & CRPS & MCB & DSC & PICP & Width & DM \\
+\hline
+Hourly & LEAR & 19.84 & 16.14 & 0.63 & 19.10 & 71.1 & 52.86 & -- \\
+Interpolated & LEAR & 18.92 & 15.08 & 0.55 & 20.09 & 71.9 & 51.65 & -- \\
+Native & LEAR & 18.60 & 14.70 & 0.53 & 20.45 & 75.5 & 54.73 & \ensuremath{<}0.001 \\
+\hline
+Hourly & LEAR+ACI & 19.84 & 16.03 & 0.49 & 19.07 & 80.1 & 65.17 & -- \\
+Interpolated & LEAR+ACI & 18.92 & 15.08 & 0.51 & 20.05 & 80.1 & 62.13 & -- \\
+Native & LEAR+ACI & 18.60 & 14.78 & 0.56 & 20.40 & 80.0 & 61.41 & \ensuremath{<}0.001 \\
+\hline
+Hourly & XGB & 20.02 & 16.34 & 1.06 & 19.34 & 62.1 & 44.67 & -- \\
+Interpolated & XGB & 19.68 & 15.33 & 0.70 & 19.98 & 64.7 & 43.41 & -- \\
+Native & XGB & 19.17 & 14.83 & 0.57 & 20.36 & 69.4 & 46.93 & \ensuremath{<}0.001 \\
+\hline
+Hourly & XGB+ACI & 20.02 & 15.82 & 0.41 & 19.20 & 80.1 & 65.19 & -- \\
+Interpolated & XGB+ACI & 19.68 & 15.05 & 0.34 & 19.91 & 80.0 & 60.58 & -- \\
+Native & XGB+ACI & 19.17 & 14.67 & 0.33 & 20.28 & 80.1 & 60.00 & \ensuremath{<}0.001 \\
+\hline
+\end{tabular}
